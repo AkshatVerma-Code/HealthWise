@@ -23,12 +23,16 @@ export async function POST(request: NextRequest) {
       success: true,
       data: {
         message: "Your symptoms may be serious. Please contact emergency medical services or visit the nearest hospital now.",
-        clinicalAnalysis: {
-          computationalSummary: "Symptom set suggests acute respiratory or cardiovascular distress requiring immediate physical intervention.",
-          supportingHistory: [],
-          suggestedActions: ["Seek Emergency Room", "Call 911/112"],
-          shouldEscalate: true,
+        insightCard: {
+          type: "URGENT",
+          title: "Critical Red Flag Detected",
+          summary: "Symptom set suggests acute respiratory or cardiovascular distress requiring immediate physical intervention.",
+          evidence: ["Emergency Signal Detected"],
+          recommendations: ["Seek Emergency Room immediately", "Call 911/112/local emergency"],
+          nextSteps: ["Stop all activity", "Wait for emergency personnel"],
+          confidence: 1.0,
         },
+        followUp: "Are you with someone who can help you right now?",
         disclaimer: getSafetyDisclaimer(),
       },
     });
@@ -40,7 +44,8 @@ export async function POST(request: NextRequest) {
     success: true,
     data: {
       message: generated.message,
-      clinicalAnalysis: generated.clinicalAnalysis,
+      insightCard: generated.insightCard,
+      followUp: generated.followUp,
       ayushPerspective: generated.ayushPerspective,
       disclaimer: generated.disclaimer || getSafetyDisclaimer(),
     },

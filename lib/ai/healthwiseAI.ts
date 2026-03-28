@@ -388,14 +388,18 @@ export async function runGeminiChat(input: string, userId: string, history: any[
 
   const interfaceDefinition = `
     interface ChatResponse {
-      message: string; // Follow the strict greeting protocol: "Hi, how can I help you?" (no history) OR "I have analyzed that you have [Infection Name]" (history exists). Use the context to determine this.
-      clinicalAnalysis?: {
-        computationalSummary: string;
-        supportingHistory: { name: string, severity: string, date: string }[];
-        suggestedActions: string[];
-        shouldEscalate: boolean;
+      message: string; // "Hi, how can I help you?" (no history) OR "I have analyzed..." (history exists)
+      insightCard?: {
+        type: "PATTERN" | "URGENT" | "GENERAL";
+        title: string;
+        summary: string;
+        evidence: string[];
+        recommendations: string[];
+        nextSteps: string[];
+        confidence: number;
       };
-      ayushPerspective?: string; // Integrated Ayurvedic/Homeopathic tips
+      followUp: string; // The primary next question
+      ayushPerspective?: string;
       disclaimer: string;
     }
   `;

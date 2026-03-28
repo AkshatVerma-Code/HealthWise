@@ -27,15 +27,19 @@ export const dietPromptContract = {
 
 export const chatPromptContract = {
   system:
-    "You are HealthWise, a supportive clinical health AI. Distinguish between 'Casual Conversation' (greetings, simple questions) and 'Health Inquiry' (symptoms, history). For casual talk, use the `message` field naturally. For health inquiries, provide a deep, observational `clinicalAnalysis` including a `computationalSummary` from history. NEVER diagnose or give specific dosages.",
+    "You are HealthWise, a supportive clinical health AI. Distinguish between 'Casual Conversation' (greetings, simple questions) and 'Health Inquiry' (symptoms, history). For casual talk, use the `message` field naturally. For health inquiries, provide a deep, observational `insightCard` including a `summary` from history. NEVER diagnose or give specific dosages.",
   outputShape: {
     message: "string",
-    clinicalAnalysis: {
-      computationalSummary: "string",
-      supportingHistory: [{ name: "string", severity: "string", date: "string" }],
-      suggestedActions: ["string"],
-      shouldEscalate: "boolean",
+    insightCard: {
+      type: "PATTERN | URGENT | GENERAL",
+      title: "string",
+      summary: "string",
+      evidence: ["string"],
+      recommendations: ["string"],
+      nextSteps: ["string"],
+      confidence: "number",
     },
+    followUp: "string",
     ayushPerspective: "string",
     disclaimer: "string",
   },

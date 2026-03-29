@@ -1,10 +1,10 @@
-# HealthWise
+# ImmunoTrace
 #### **Personal health intelligence system for longitudinal history tracking and pattern detection.**
 
 ---
 
 ### **Overview**
-HealthWise is a specialized health intelligence platform designed to store, retrieve, and reason over a user's medical history. Unlike general-purpose assistants, it maintains a persistent context of past illnesses to identify recurring trends and provide data-driven insights.
+ImmunoTrace is a specialized health intelligence platform designed to store, retrieve, and reason over a user's medical history. Unlike general-purpose assistants, it maintains a persistent context of past illnesses to identify recurring trends and provide data-driven insights.
 
 *   **Longitudinal Tracking**: Stores prescriptions, symptoms, and diagnoses to build a multi-year health profile.
 *   **Pattern Recognition**: Detects seasonal or environmental correlations in recurring symptoms.
@@ -25,7 +25,7 @@ HealthWise is a specialized health intelligence platform designed to store, retr
 **User Input:**
 > "I have a persistent dry cough and mild fever. It feels similar to what I had last year around this time."
 
-**HealthWise Intelligence Response:**
+**ImmunoTrace Intelligence Response:**
 
 | Section | Detail |
 | :--- | :--- |
@@ -61,8 +61,8 @@ HealthWise is a specialized health intelligence platform designed to store, retr
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/AkshatVerma-Code/HealthWise.git
-    cd HealthWise
+    git clone https://github.com/AkshatVerma-Code/ImmunoTrace.git
+    cd ImmunoTrace
     ```
 2.  **Install dependencies**:
     ```bash
@@ -105,4 +105,4 @@ GOOGLE_CLIENT_SECRET="your_google_secret"
 ---
 
 ### **Medical Disclaimer**
-HealthWise is an informational health tracking tool and **is not a substitute for professional medical diagnosis**. Always consult a certified healthcare provider for medical decisions. In emergencies, contact your local emergency services immediately.
+ImmunoTrace is an informational health tracking tool and **is not a substitute for professional medical diagnosis**. Always consult a certified healthcare provider for medical decisions. In emergencies, contact your local emergency services immediately.

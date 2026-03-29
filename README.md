@@ -1,96 +1,130 @@
 # HealthWise 🧬
-### **Precision Clinical Intelligence & Health Memory**
+### **Precision Clinical Intelligence & Longitudinal Health Memory**
 
-**HealthWise** is a high-end, data-driven clinical health companion designed to "remember and understand the user’s body over time." Moving beyond generic conversational AI, HealthWise leverages the latest in **Mistral AI** micro-models to reason over historical medical records, detect seasonal patterns, and provide structured clinical insights through a premium, glassmorphic interface.
+![HealthWise Hero](file:///Users/rajatnathmishra/.gemini/antigravity/brain/0cca5593-a56b-4efe-9627-312ee0511ae3/healthwise_ui_mockup_1774724651255.png)
 
----
-
-## 🌟 The Core Vision: "Clinical Memory"
-Most health assistants start every conversation from zero. **HealthWise is different.** It is built on the principle of **State-Aware Healthcare**, where the system:
-- **Remembers**: Every past prescription, symptom, and diagnosis is stored as a high-dimensional vector.
-- **Reasons**: Cross-references current complaints with historical data to find patterns.
-- **Guides**: Uses a "Guided Discovery" protocol to build a comprehensive context tree for new users.
+**HealthWise** is a production-grade, AI-orchestrated clinical health platform designed to "remember and understand the user’s body over time." Unlike generic chatbots, HealthWise functions as a **Cognitive Health Memory**, reasoning over historical records, detecting seasonal patterns, and providing structured clinical insights through a premium glassmorphic interface.
 
 ---
 
-## ✨ Specialized Clinical Features
+## 🌟 Core Philosophy: "Beyond Records"
+Traditional healthcare is fragmented. HealthWise bridges the gap between historical clinical data and daily physiological wellness using three core architectural pillars:
 
-### 🧠 **Context-Aware Reasoning**
-When a returning user enters a symptom, HealthWise doesn't just explain it—it analyzes it against their history. 
-> *"I noticed you had a similar respiratory incident in Nov 2024. This suggests a seasonal recurring pattern."*
+1.  **State-Aware Reasoning**: Every interaction contributes to a growing context tree.
+2.  **Guided Discovery**: A progressive onboarding protocol that builds a clinical baseline without information overload.
+3.  **Resilience-First AI**: A 3-layer structural repair system that ensures 100% reliable clinical data parsing.
 
-### 🔍 **Guided Discovery Protocol**
-For new users with empty records, HealthWise enters **Discovery Mode**, using focused, progressive questions to build a high-trust clinical profile without information overload.
+---
 
-### 🖼️ **Pixtral Vision OCR**
-Powered by **Mistral Pixtral-12B**, users can instantly upload prescriptions and medical documents. HealthWise extracts standardized clinical data (medications, dosages, diagnoses) with 95% confidence.
+## ✨ A-Z Feature Suite
 
-### 🍱 **Ayush Strategy Guardrails**
-Integrated traditional wisdom (Ayush) provided as a complementary "Perspective" layer, sanitized by strict medical guardrails to ensure holistic yet safe advice.
+### 🧠 **Clinical Intelligence Engine**
+- **Context-Aware Mode**: Automatically detects recurring illnesses by cross-referencing years of history.
+- **Discovery Mode**: Conducts structured Socratic questioning for users with no prior data.
+- **Pattern Recognition**: Identifies seasonal trends (e.g., "Recurring March URTI") and environmental triggers.
 
-### 💎 **Hybrid Clinical UI**
-A state-of-the-art glassmorphic dashboard featuring:
-- **Insight Cards**: Structured analysis with pattern types, evidence, and recommendations.
-- **Guided Chips**: Interactive next-steps based on AI clinical reasoning.
-- **Confidence Scoring**: Transparent metrics for all AI-generated insights.
+### 🖼️ **Document Intelligence (OCR)**
+- Powered by **Mistral Pixtral-12B**, users can upload prescriptions, lab reports, and diet charts.
+- Standardizes messy handwritten notes into structured JSON models (Medication, Dosage, Frequency).
+
+### 🍱 **Holistic Integration (Ayush)**
+- Provides a complementary "Ayush Perspective" layer based on Ministry of Ayush frameworks.
+- Sanitized by strict medical guardrails to ensure holistic advice never compromises safety.
+
+### 💎 **Next-Gen Clinical UI**
+- **Insight Cards**: Premium glassmorphic cards displaying diagnoses, evidence, and next steps.
+- **Guided Chips**: Dynamic, AI-suggested follow-up questions to deepen the diagnostic context.
+- **Health Snapshot**: A real-time visualization of the user's current physiological state.
 
 ---
 
 ## 🛠 High-End Tech Stack
 
-- **Core Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
-- **UI Architecture**: [Tailwind CSS 4.0](https://tailwindcss.com/) (Modern CSS-first tokens)
-- **AI Orchestration**: 
-  - **Reasoning**: `ministral-3b-2512` (Micro-model optimized for clinical precision)
-  - **Vision**: `pixtral-12b-2409` (Document OCR)
-  - **Embeddings**: `mistral-embed-2312` (1024-dim Vector Search)
-- **Database Layer**: [Supabase](https://supabase.com/) & [Prisma](https://www.prisma.io/)
-- **Vector Search**: `pgvector` for RAG-driven clinical history retrieval.
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | [Next.js 15+](https://nextjs.org/) (App Router, React 19) |
+| **Styling** | [Tailwind CSS 4.0](https://tailwindcss.com/) (CSS-first tokens) |
+| **Auth** | [Auth.js v5](https://authjs.dev/) (Google OAuth + Credentials) |
+| **Database** | [Supabase](https://supabase.com/) + [Prisma](https://www.prisma.io/) |
+| **Vector DB** | `pgvector` for Semantic Clinical Retrieval |
+| **AI Reasoning** | `ministral-3b-2512` (Optimized for precision) |
+| **AI Vision** | `pixtral-12b-2409` (Standardized OCR) |
+| **AI Embedding** | `mistral-embed-2312` (1024-dim vectors) |
 
 ---
 
-## 🚀 Rapid Deployment
+## 🚀 Installation & Setup (A-Z)
 
-### 1. Initialize Project
+### 1. Prerequisites
+- **Node.js**: v20.x or higher
+- **Supabase Account**: For Postgres + Vector search
+- **Mistral API Key**: For the reasoning and vision engine
+- **Google Cloud Console**: For OAuth 2.0 credentials
+
+### 2. Clone & Install
 ```bash
 git clone https://github.com/AkshatVerma-Code/HealthWise.git
 cd HealthWise
 npm install
 ```
 
-### 2. Configure Environment
-Create `.env.local` with your production-grade credentials:
+### 3. Database Initialization
+1.  **Create a Supabase Project**.
+2.  **Enable pgvector**: Run `CREATE EXTENSION IF NOT EXISTS vector;` in the SQL Editor.
+3.  **Run Migrations**:
+    ```bash
+    npx prisma generate
+    npx prisma db push
+    ```
+
+### 4. Environment Variables
+Create a `.env.local` file with the following high-end configuration:
+
 ```env
-# AI Infrastructure
-MISTRAL_API_KEY=your_mistral_key
+# --- NEXTAUTH (OAUTH) ---
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+# Required for ngrok/tunnels
+AUTH_TRUST_HOST=true
 
-# Database Infrastructure (Supabase Direct)
-DATABASE_URL="postgresql://postgres.[ID]:5432/postgres"
-DIRECT_URL="postgresql://postgres.[ID]:5432/postgres"
+# --- GOOGLE OAUTH ---
+GOOGLE_CLIENT_ID="your_google_id"
+GOOGLE_CLIENT_SECRET="your_google_secret"
+
+# --- AI INFRASTRUCTURE (MISTRAL) ---
+MISTRAL_API_KEY="your_mistral_key"
+
+# --- DATABASE (SUPABASE) ---
+# Use port 6543 for pooled connection (Prisma)
+POSTGRES_PRISMA_URL="postgresql://postgres.[REF]:[PW]@aws-1-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
+# Use port 5432 for direct connection (Migrations)
+POSTGRES_URL_NON_POOLING="postgresql://postgres.[REF]:[PW]@aws-1-us-east-1.pooler.supabase.com:5432/postgres"
 ```
 
-### 3. Launch Platform
-```bash
-# Seed the initial clinical patterns
-npm run db:seed
-
-# Start the development server
-npm run dev
-```
+### 5. Deployment with ngrok (Live Access)
+To make your local clinical system "live" for testing:
+1.  **Install ngrok**: `brew install ngrok`
+2.  **Start Tunnel**:
+    ```bash
+    # Uses the pre-configured ngrok_live.yml for zero-binding errors
+    ngrok http --config ngrok_live.yml 3000
+    ```
+3.  **Update Google Console**: Add your `ngrok` URL as an Authorized Redirect URI.
 
 ---
 
-## 🛡️ Clinical Trust & Safety
-HealthWise is built with **Resilience-First** engineering:
-- **3-Layer Repair System**: Automatically corrects AI schema fluctuations (nesting, key renaming) before they reach the UI.
-- **Professional Fallbacks**: Never dumps raw JSON. In case of parsing errors, the system provides a polished clinical apology.
-- **Strict Guardrails**: Every response is passed through a sanitation layer to remove unauthorized medical advice and emphasize professional consultation.
+## 🛡️ Resilience & Safety Protocol
+
+HealthWise implements a **3-Layer Structural Repair System** to ensure UI stability:
+1.  **Unwrapping Layer**: Automatically detects and extracts JSON from markdown or nested model outputs.
+2.  **Schema Hardening**: Maps fuzzy AI keys (e.g., `greeting` → `message`) to the strict TypeScript interface.
+3.  **Professional Apology**: If the AI model fails the reasoning loop, the system returns a sanitized clinical apology rather than a raw error.
 
 ---
 
 ## 🩺 Medical Disclaimer
-HealthWise is an informational health memory tool and **is not a substitute for professional medical diagnosis**. Always consult a certified healthcare provider for medical decisions. In emergencies, please contact your local emergency services immediately.
+HealthWise is a longitudinal health memory and information tool. It **does not provide medical diagnosis**. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. In case of emergency, contact your local emergency services immediately.
 
 ---
 
-**Built with ❤️ for the future of Personalized Clinical Intelligence.**
+**Built with ❤️ by HealthWise Clinical Engineering.**
